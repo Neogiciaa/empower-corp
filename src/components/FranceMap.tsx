@@ -14,7 +14,7 @@ interface City {
 const cities: City[] = [
   // Agences actives
   { name: "Rennes", x: 29, y: 35, active: true },
-  { name: "Nantes", x: 30, y: 44, active: true, href: "https://maps.app.goo.gl/nantes-empower" },
+  { name: "Nantes", x: 30, y: 44, active: true, href: "https://www.google.com/maps/place/One+Project+Marketing/@47.2514586,-1.6219523,17z/data=!3m2!4b1!5s0x4805ed1a0111c421:0x1d8e394c9e4efccf!4m6!3m5!1s0x4805ed0027c998a1:0x86e4f872aacd158!8m2!3d47.251455!4d-1.6193774!16s%2Fg%2F11yx9xx0wk" },
   // Futures ouvertures
   { name: "Brest", x: 11, y: 33, active: false },
   { name: "Rouen", x: 44, y: 23, active: false },
