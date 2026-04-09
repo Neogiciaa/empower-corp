@@ -41,30 +41,33 @@ function CityMarker({ city, index }: { city: City; index: number }) {
         gap: "6px",
       }}
     >
-      {/* Pulse ring for active cities */}
-      {city.active && (
+      {/* Dot + pulse ring wrapper */}
+      <div style={{ position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        {city.active && (
+          <span
+            style={{
+              position: "absolute",
+              width: "28px",
+              height: "28px",
+              borderRadius: "50%",
+              border: "1px solid rgba(200, 169, 126, 0.3)",
+              top: "50%",
+              left: "50%",
+              animation: "pulse-ring 2.5s ease-out infinite",
+            }}
+          />
+        )}
         <span
           style={{
-            position: "absolute",
-            width: "28px",
-            height: "28px",
+            width: city.active ? "12px" : "8px",
+            height: city.active ? "12px" : "8px",
             borderRadius: "50%",
-            border: "1px solid rgba(200, 169, 126, 0.3)",
-            animation: "pulse-ring 2.5s ease-out infinite",
+            background: city.active ? "#c8a97e" : "rgba(255,255,255,0.25)",
+            border: city.active ? "2px solid rgba(200, 169, 126, 0.4)" : "1px solid rgba(255,255,255,0.15)",
+            boxShadow: city.active ? "0 0 12px rgba(200, 169, 126, 0.4)" : "none",
           }}
         />
-      )}
-      {/* Dot */}
-      <span
-        style={{
-          width: city.active ? "12px" : "8px",
-          height: city.active ? "12px" : "8px",
-          borderRadius: "50%",
-          background: city.active ? "#c8a97e" : "rgba(255,255,255,0.25)",
-          border: city.active ? "2px solid rgba(200, 169, 126, 0.4)" : "1px solid rgba(255,255,255,0.15)",
-          boxShadow: city.active ? "0 0 12px rgba(200, 169, 126, 0.4)" : "none",
-        }}
-      />
+      </div>
       {/* Label */}
       <span
         style={{

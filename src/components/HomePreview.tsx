@@ -205,7 +205,7 @@ export default function HomePreview() {
                 }}
               >
                 &laquo; Créer de la croissance, développer des leaders et bâtir
-                des organisations performantes. &raquo;
+                des organisations performantes.&nbsp;&raquo;
               </p>
               <p style={{ marginTop: "16px", fontSize: "13px", color: "#888" }}>
                 Tristan Escutary, Fondateur

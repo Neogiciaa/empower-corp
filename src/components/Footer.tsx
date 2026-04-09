@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer style={{ borderTop: "1px solid #141414" }}>
-      <div className="container-main" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
+      <div className="container-main" style={{ paddingTop: "60px", paddingBottom: "60px" }}>
         {/* Top row */}
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto_auto] gap-12 md:gap-16">
           <div>
@@ -33,13 +33,13 @@ export default function Footer() {
               />
               Empower <span style={{ color: "#c8a97e" }}>Corp</span>
             </Link>
-            <p style={{ marginTop: "12px", fontSize: "14px", color: "#888", lineHeight: 1.7, maxWidth: "320px" }}>
+            <p style={{ marginTop: "14px", fontSize: "15px", color: "#888", lineHeight: 1.7, maxWidth: "340px" }}>
               Développement commercial, leadership et entrepreneuriat en France et en Europe.
             </p>
           </div>
 
           <div>
-            <p style={{ fontSize: "11px", color: "#c8a97e", textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: "16px" }}>
+            <p style={{ fontSize: "12px", color: "#c8a97e", textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: "18px" }}>
               Navigation
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
@@ -53,7 +53,7 @@ export default function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  style={{ fontSize: "13px", color: "#898989", textDecoration: "none", transition: "color 0.3s" }}
+                  style={{ fontSize: "15px", color: "#898989", textDecoration: "none", transition: "color 0.3s" }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = "#ccc")}
                   onMouseLeave={(e) => (e.currentTarget.style.color = "#898989")}
                 >
@@ -64,7 +64,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <p style={{ fontSize: "11px", color: "#c8a97e", textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: "16px" }}>
+            <p style={{ fontSize: "12px", color: "#c8a97e", textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: "18px" }}>
               Suivez-nous
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
@@ -72,17 +72,17 @@ export default function Footer() {
                 href="https://www.instagram.com/empower_corp/"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ fontSize: "13px", color: "#898989", textDecoration: "none", transition: "color 0.3s" }}
+                style={{ fontSize: "15px", color: "#898989", textDecoration: "none", transition: "color 0.3s" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#ccc")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "#898989")}
               >
                 Instagram
               </a>
               <a
-                href="https://www.tiktok.com/@empower_corp_rennes"
+                href="https://www.tiktok.com/@empower_corp.rennes?_r=1&_t=ZN-95AXpkPllRu"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ fontSize: "13px", color: "#898989", textDecoration: "none", transition: "color 0.3s" }}
+                style={{ fontSize: "15px", color: "#898989", textDecoration: "none", transition: "color 0.3s" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#ccc")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "#898989")}
               >
@@ -94,10 +94,10 @@ export default function Footer() {
 
         {/* Bottom */}
         <div style={{ marginTop: "48px", paddingTop: "24px", borderTop: "1px solid #141414", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px" }}>
-          <span style={{ fontSize: "12px", color: "#898989" }}>
+          <span style={{ fontSize: "13px", color: "#898989" }}>
             &copy; {new Date().getFullYear()} Empower Corp. Tous droits réservés.
           </span>
-          <span style={{ fontSize: "12px", color: "#898989" }}>
+          <span style={{ fontSize: "13px", color: "#898989" }}>
             Rennes &middot; Nantes &middot; France
           </span>
         </div>

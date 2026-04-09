@@ -153,16 +153,23 @@ export default function Hero() {
           }}
         >
           {[
-            { val: "50K+", label: "acquisitions" },
-            { val: "2019", label: "depuis" },
+            { val: "50K+", label: "acquisitions", labelFirst: false },
+            { val: "2019", label: "depuis", labelFirst: true },
           ].map((s) => (
             <div key={s.label} style={{ display: "flex", alignItems: "baseline", gap: "8px" }}>
+              {s.labelFirst && (
+                <span style={{ fontSize: "12px", color: "#898989", letterSpacing: "0.03em" }}>
+                  {s.label}
+                </span>
+              )}
               <span style={{ fontSize: "22px", fontWeight: 600, color: "#c8a97e" }}>
                 {s.val}
               </span>
-              <span style={{ fontSize: "12px", color: "#898989", letterSpacing: "0.03em" }}>
-                {s.label}
-              </span>
+              {!s.labelFirst && (
+                <span style={{ fontSize: "12px", color: "#898989", letterSpacing: "0.03em" }}>
+                  {s.label}
+                </span>
+              )}
             </div>
           ))}
         </motion.div>
