@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Franchisé Nantes — Dicka Nassar",
@@ -20,8 +21,8 @@ export default function NantesPage() {
     >
       <div className="container-main">
         {/* Back link */}
-        <a
-          href="/#carte"
+        <Link
+          href="/"
           style={{
             display: "inline-flex",
             alignItems: "center",
@@ -38,7 +39,7 @@ export default function NantesPage() {
             <path d="M10 12L6 8l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
           Retour
-        </a>
+        </Link>
 
         <div
           style={{

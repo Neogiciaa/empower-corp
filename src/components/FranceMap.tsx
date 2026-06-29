@@ -86,22 +86,12 @@ function CityMarker({ city, index }: { city: City; index: number }) {
   );
 
   if (city.href && city.active) {
-    const isInternal = city.href.startsWith("/");
-    if (isInternal) {
-      return (
-        <Link href={city.href} style={{ textDecoration: "none" }} title={`Découvrir l'agence de ${city.name}`}>
-          {dot}
-        </Link>
-      );
-    }
-    return (
-      <a
-        href={city.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{ textDecoration: "none" }}
-        title={`Voir l'agence de ${city.name} sur Google Maps`}
-      >
+    return city.href.startsWith("/") ? (
+      <Link href={city.href} style={{ textDecoration: "none" }} title={`Découvrir l'agence de ${city.name}`}>
+        {dot}
+      </Link>
+    ) : (
+      <a href={city.href} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }} title={`Voir l'agence de ${city.name} sur Google Maps`}>
         {dot}
       </a>
     );

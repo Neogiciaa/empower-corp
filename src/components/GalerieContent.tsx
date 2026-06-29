@@ -50,10 +50,11 @@ function Lightbox({ index, onClose, onPrev, onNext }: {
       if (e.key === "ArrowRight") onNext();
     };
     document.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
       document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
+      document.body.style.overflow = prevOverflow;
     };
   }, [onClose, onPrev, onNext]);
 
@@ -72,7 +73,7 @@ function Lightbox({ index, onClose, onPrev, onNext }: {
     >
       {/* Close */}
       <button
-        onClick={onClose}
+        onClick={(e) => { e.stopPropagation(); onClose(); }}
         style={{
           position: "absolute",
           top: "24px",
