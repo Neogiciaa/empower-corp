@@ -2,6 +2,7 @@
 
 import AnimatedSection from "./AnimatedSection";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 interface City {
   name: string;
@@ -14,7 +15,7 @@ interface City {
 const cities: City[] = [
   // Agences actives
   { name: "Rennes", x: 29, y: 35, active: true },
-  { name: "Nantes", x: 30, y: 44, active: true, href: "https://www.google.com/maps/place/One+Project+Marketing/@47.2514586,-1.6219523,17z/data=!3m2!4b1!5s0x4805ed1a0111c421:0x1d8e394c9e4efccf!4m6!3m5!1s0x4805ed0027c998a1:0x86e4f872aacd158!8m2!3d47.251455!4d-1.6193774!16s%2Fg%2F11yx9xx0wk" },
+  { name: "Nantes", x: 30, y: 44, active: true, href: "/franchises/nantes" },
   // Futures ouvertures
   { name: "Brest", x: 11, y: 33, active: false },
   { name: "Rouen", x: 44, y: 23, active: false },
@@ -85,6 +86,14 @@ function CityMarker({ city, index }: { city: City; index: number }) {
   );
 
   if (city.href && city.active) {
+    const isInternal = city.href.startsWith("/");
+    if (isInternal) {
+      return (
+        <Link href={city.href} style={{ textDecoration: "none" }} title={`Découvrir l'agence de ${city.name}`}>
+          {dot}
+        </Link>
+      );
+    }
     return (
       <a
         href={city.href}
@@ -173,14 +182,23 @@ export default function FranceMap() {
                     <span style={{ fontSize: "16px", fontWeight: 500 }}>{city.name}</span>
                     <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
                       {city.href && (
-                        <a
-                          href={city.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{ fontSize: "11px", color: "#c8a97e", letterSpacing: "0.08em", textDecoration: "none", borderBottom: "1px solid rgba(200,169,126,0.3)" }}
-                        >
-                          VOIR SUR LA CARTE
-                        </a>
+                        city.href.startsWith("/") ? (
+                          <Link
+                            href={city.href}
+                            style={{ fontSize: "11px", color: "#c8a97e", letterSpacing: "0.08em", textDecoration: "none", borderBottom: "1px solid rgba(200,169,126,0.3)" }}
+                          >
+                            VOIR LE FRANCHISÉ
+                          </Link>
+                        ) : (
+                          <a
+                            href={city.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ fontSize: "11px", color: "#c8a97e", letterSpacing: "0.08em", textDecoration: "none", borderBottom: "1px solid rgba(200,169,126,0.3)" }}
+                          >
+                            VOIR SUR LA CARTE
+                          </a>
+                        )
                       )}
                       <span style={{ fontSize: "11px", color: "#c8a97e", letterSpacing: "0.08em", textTransform: "uppercase" }}>
                         Active

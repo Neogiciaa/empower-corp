@@ -12,6 +12,7 @@ const navLinks = [
   { label: "Histoire", href: "/#histoire" },
   { label: "Parcours", href: "/#parcours" },
   { label: "FAQ", href: "/#faq" },
+  { label: "Galerie", href: "/galerie" },
 ];
 
 export default function Navbar() {
