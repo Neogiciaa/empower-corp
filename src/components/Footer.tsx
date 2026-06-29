@@ -48,6 +48,7 @@ export default function Footer() {
                 { label: "Histoire", href: "/#histoire" },
                 { label: "Parcours", href: "/#parcours" },
                 { label: "FAQ", href: "/#faq" },
+                { label: "Galerie", href: "/galerie" },
                 { label: "Nous rejoindre", href: "/#rejoindre" },
               ].map((link) => (
                 <Link
