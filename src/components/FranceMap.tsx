@@ -15,7 +15,7 @@ interface City {
 const cities: City[] = [
   // Agences actives
   { name: "Rennes", x: 29, y: 35, active: true },
-  { name: "Nantes", x: 30, y: 44, active: true, href: "/franchises/nantes" },
+  { name: "Nantes", x: 30, y: 44, active: true },
   // Futures ouvertures
   { name: "Brest", x: 11, y: 33, active: false },
   { name: "Rouen", x: 44, y: 23, active: false },
